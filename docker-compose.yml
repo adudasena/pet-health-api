@@ -4,8 +4,8 @@ services:
     container_name: pet-db
     restart: always
     environment:
-      POSTGRES_USER: duda
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
       POSTGRES_DB: pethealth_db
     ports:
-      - "5432:5432"
+      - "5433:5432"
