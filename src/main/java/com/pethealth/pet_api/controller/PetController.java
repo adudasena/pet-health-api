@@ -1,15 +1,26 @@
 package com.pethealth.pet_api.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.pethealth.pet_api.model.Pet;
+import com.pethealth.pet_api.service.PetService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/pets") // define que todos os caminhos aqui começam com /pets
+@RequestMapping("/pets")
 public class PetController {
 
-    @GetMapping("/hello")
-    public String helloWorld() {
-        return "The PetHealth API is online!";
+    @Autowired
+    private PetService service;
+
+    @GetMapping
+    public List<Pet> listar() {
+        return service.listarTodos();
+    }
+
+    @PostMapping
+    public Pet criar(@RequestBody Pet pet) {
+        return service.salvar(pet);
     }
 }
