@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:15
+    container_name: pet-db
+    restart: always
+    environment:
+      POSTGRES_USER: duda
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: pethealth_db
+    ports:
+      - "5432:5432"
