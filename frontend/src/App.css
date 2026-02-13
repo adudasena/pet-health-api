@@ -1,9 +1,11 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --moss-green: #4A5D23;
+  --light-gray: #F8F9F5;
+  --text-dark: #2C3E50;
+  --status-sick: #E67E22;
+  --status-healthy: #27AE60;
 }
+
 
 .logo {
   height: 6em;
@@ -40,3 +42,4 @@
 .read-the-docs {
   color: #888;
 }
+
